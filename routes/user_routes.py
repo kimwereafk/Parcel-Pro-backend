@@ -11,7 +11,7 @@ class UserResource(Resource):
         return [user.to_dict() for user in users]
 
     def post(self):
-        # Handle user creation
+        
         pass
 
     def put(self, id):
