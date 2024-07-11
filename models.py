@@ -11,6 +11,8 @@ class User(db.Model, SerializerMixin):
 
     orders = db.relationship('Order', backref='user', lazy=True)
 
+    
+
 class Order(db.Model, SerializerMixin):
     __tablename__ = 'orders'
     order_id = db.Column(db.Integer, primary_key=True)
