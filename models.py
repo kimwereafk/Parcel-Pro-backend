@@ -10,6 +10,7 @@ class User(db.Model, SerializerMixin):
     role = db.Column(db.String(50), nullable=False)
 
     orders = db.relationship('Order', backref='user', lazy=True)
+    
 
 class Order(db.Model, SerializerMixin):
     __tablename__ = 'orders'
@@ -21,8 +22,6 @@ class Order(db.Model, SerializerMixin):
 
     items = db.relationship('Item', backref='order', lazy=True)
     feedback = db.relationship('Feedback', backref='order', lazy=True)
-
-    
 
 class Item(db.Model, SerializerMixin):
     __tablename__ = 'items'
