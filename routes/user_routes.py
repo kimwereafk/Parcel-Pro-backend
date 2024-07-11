@@ -17,13 +17,12 @@ class User(db.Model, SerializerMixin):
     email = db.Column(db.String(110), unique=True, nullable=False)
     password = db.Column(db.String(40), nullable=False)
     role = db.Column(db.String(50), nullable=False)
-p
+
 def to_dict(self):
         return {
             'id': self.id,
             'username': self.username,
-            'email': self.email,
-            'password': self.password,  # Note: Not recommended to return password in response
+            'email': self.email
             'role': self.role
         }
 

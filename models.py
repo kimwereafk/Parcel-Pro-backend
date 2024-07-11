@@ -22,6 +22,8 @@ class Order(db.Model, SerializerMixin):
     items = db.relationship('Item', backref='order', lazy=True)
     feedback = db.relationship('Feedback', backref='order', lazy=True)
 
+    
+
 class Item(db.Model, SerializerMixin):
     __tablename__ = 'items'
     id = db.Column(db.Integer, primary_key=True)
